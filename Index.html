@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arun Koli</title>
+<style>
+  :root{
+    --bg:#0d1117;
+    --panel:#11161d;
+    --line:#1f2733;
+    --text:#d6deeb;
+    --muted:#7c8aa3;
+    --accent:#5eead4;
+    --accent-dim:#2dd4bf33;
+    --mono:'SF Mono','JetBrains Mono','Fira Code',monospace;
+    --sans:'Inter','Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(13,17,23,0.85);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    height:56px;
+  }
+  .brand{font-family:var(--mono);color:var(--accent);font-size:14px;letter-spacing:0.5px;}
+  .navlinks{display:flex;gap:24px;font-family:var(--mono);font-size:13px;}
+  .navlinks a{color:var(--muted);text-decoration:none;}
+  .navlinks a:hover, .navlinks a:focus-visible{color:var(--accent);outline:none;}
+
+  /* hero */
+  header.hero{
+    padding:90px 0 70px;
+    border-bottom:1px solid var(--line);
+  }
+  .prompt-line{
+    font-family:var(--mono);
+    color:var(--muted);
+    font-size:14px;
+    margin:0 0 18px;
+  }
+  .prompt-line .sym{color:var(--accent);}
+  h1{
+    font-family:var(--mono);
+    font-size:clamp(34px,6vw,52px);
+    margin:0 0 6px;
+    color:#fff;
+    letter-spacing:-0.5px;
+  }
+  h1 .cursor{
+    display:inline-block;
+    width:0.5ch;
+    background:var(--accent);
+    animation:blink 1s steps(1) infinite;
+    margin-left:4px;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  .role{
+    font-size:18px;
+    color:var(--muted);
+    margin:0 0 22px;
+  }
+  .role strong{color:var(--text);font-weight:600;}
+  .location{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--muted);
+    display:flex;align-items:center;gap:8px;
+  }
+  .location .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-dim);
+  }
+
+  /* sections */
+  section{padding:60px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .eyebrow{
+    font-family:var(--mono);
+    color:var(--accent);
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin:0 0 18px;
+  }
+  .eyebrow::before{content:'// ';color:var(--muted);}
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:24px 26px;
+  }
+  .card h2{
+    margin:0 0 4px;
+    font-size:18px;
+    color:#fff;
+    font-weight:600;
+  }
+  .card .sub{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--accent);
+    margin:0 0 12px;
+  }
+  .card p.desc{
+    margin:0;
+    color:var(--muted);
+    font-size:14.5px;
+  }
+
+  .stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+  }
+  .pill{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text);
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:6px 14px;
+    transition:border-color .2s,color .2s;
+  }
+  .pill:hover{border-color:var(--accent);color:var(--accent);}
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .contact-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px;
+    text-decoration:none;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    transition:transform .15s, border-color .15s;
+  }
+  .contact-card:hover, .contact-card:focus-visible{
+    border-color:var(--accent);
+    transform:translateY(-2px);
+    outline:none;
+  }
+  .contact-card .label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .contact-card .value{
+    font-size:15px;
+    word-break:break-word;
+  }
+
+  footer{
+    padding:32px 0 50px;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--muted);
+    text-align:center;
+  }
+
+  @media (max-width:560px){
+    .contact-grid{grid-template-columns:1fr;}
+    header.hero{padding:70px 0 50px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    h1 .cursor{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">arun.koli</span>
+    <div class="navlinks">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="prompt-line"><span class="sym">$</span> whoami</p>
+    <h1>Arun Koli<span class="cursor">&nbsp;</span></h1>
+    <p class="role">Building in <strong>Computer &amp; Information Technology</strong> — student, REVA University</p>
+    <div class="location"><span class="dot"></span>Bengaluru, Karnataka, India</div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">about</p>
+    <div class="card">
+      <h2>Currently studying Computer & Information Technology</h2>
+      <p class="sub">B.Tech · REVA University</p>
+      <p class="desc">
+        Based in Bengaluru, India's tech capital, and learning the fundamentals
+        of computing and information systems — with an eye on building
+        practical, real-world software.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="eyebrow">skills</p>
+    <div class="card" style="margin-bottom:16px;">
+      <p class="sub" style="margin-bottom:10px;">Languages</p>
+      <div class="stack">
+        <span class="pill">Edit me — e.g. Python</span>
+        <span class="pill">Edit me — e.g. Java</span>
+        <span class="pill">Edit me — e.g. C++</span>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:16px;">
+      <p class="sub" style="margin-bottom:10px;">Tools & Tech</p>
+      <div class="stack">
+        <span class="pill">Edit me — e.g. Git</span>
+        <span class="pill">Edit me — e.g. MySQL</span>
+        <span class="pill">Edit me — e.g. Linux</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="sub" style="margin-bottom:10px;">Core areas</p>
+      <div class="stack">
+        <span class="pill">Software Development</span>
+        <span class="pill">Information Systems</span>
+        <span class="pill">Computer Fundamentals</span>
+        <span class="pill">Problem Solving</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="eyebrow">projects</p>
+    <div class="card" style="margin-bottom:16px;">
+      <h2>Project name</h2>
+      <p class="sub">Short tech stack — e.g. Python, Flask, SQLite</p>
+      <p class="desc">One or two lines describing what this project does and what problem it solves. Replace this placeholder with your real project.</p>
+    </div>
+    <div class="card">
+      <h2>Project name</h2>
+      <p class="sub">Short tech stack — e.g. React, Node.js</p>
+      <p class="desc">One or two lines describing what this project does and what problem it solves. Replace this placeholder with your real project.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="eyebrow">contact</p>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:arunkoli2102@gmail.com">
+        <span class="label">Email</span>
+        <span class="value">arunkoli2102@gmail.com</span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/arunkoli-3511b0385" target="_blank" rel="noopener">
+        <span class="label">LinkedIn</span>
+        <span class="value">arunkoli-3511b0385</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  built by Arun Koli · Bengaluru
+</footer>
+
+</body>
+</html>
