@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    background:#1e293b;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+header h2{
+    color:#38bdf8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:90vh;
+    padding:0 10%;
+}
+
+.hero-text h1{
+    font-size:55px;
+}
+
+.hero-text h3{
+    color:#38bdf8;
+    margin:15px 0;
+}
+
+.hero-text p{
+    max-width:500px;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:#000;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.profile{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    overflow:hidden;
+    border:6px solid #38bdf8;
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#38bdf8;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+footer{
+    background:#1e293b;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h2>My Portfolio</h2>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+<h1>Hello, I'm <span style="color:#38bdf8;">Your Name</span></h1>
+
+<h3>Frontend Developer</h3>
+
+<p>
+I build responsive, modern, and user-friendly websites using HTML, CSS, JavaScript, and React.
+</p>
+
+<a href="#contact" class="btn">Hire Me</a>
+
+</div>
+
+<div class="profile">
+<img src="https://via.placeholder.com/300" alt="Profile">
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<h2 class="section-title">About Me</h2>
+
+<p>
+I am a passionate web developer who enjoys creating beautiful and responsive websites.
+I love learning new technologies and solving real-world problems through coding.
+</p>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+<h3>HTML5</h3>
+</div>
+
+<div class="skill">
+<h3>CSS3</h3>
+</div>
+
+<div class="skill">
+<h3>JavaScript</h3>
+</div>
+
+<div class="skill">
+<h3>React</h3>
+</div>
+
+<div class="skill">
+<h3>Bootstrap</h3>
+</div>
+
+<div class="skill">
+<h3>Git & GitHub</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<img src="https://via.placeholder.com/400x200" alt="">
+<div class="card-content">
+<h3>Portfolio Website</h3>
+<p>A responsive personal portfolio built using HTML and CSS.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/400x200" alt="">
+<div class="card-content">
+<h3>E-Commerce Website</h3>
+<p>An online shopping website with responsive design.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/400x200" alt="">
+<div class="card-content">
+<h3>Weather App</h3>
+<p>A weather application using JavaScript API integration.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<center>
+
+<p>Email: yourname@email.com</p>
+
+<p>Phone: +91 9876543210</p>
+
+<p>LinkedIn: linkedin.com/in/yourname</p>
+
+<p>GitHub: github.com/yourusername</p>
+
+</center>
+
+</section>
+
+<footer>
+
+<p>© 2026 Your Name | All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>
